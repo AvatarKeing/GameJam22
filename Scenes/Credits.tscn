@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://coh17t8421c2e"]
+
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="1_i8h6y"]
+[ext_resource type="Script" uid="uid://cq2q4a4gojxdc" path="res://Scripts/Options.gd" id="1_xbebw"]
+
+[node name="Credits" type="Control" unique_id=411378439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbebw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=94347495]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=186921633]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("1_i8h6y")
+theme_override_font_sizes/font_size = 200
+text = "Created By"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1650642003]
+layout_mode = 0
+offset_top = 257.0
+offset_right = 1922.0
+offset_bottom = 996.0
+theme_override_fonts/font = ExtResource("1_i8h6y")
+theme_override_font_sizes/font_size = 100
+text = "-Julian Heuser
+-Keing Taylor
+-Terra Torres
+-Charlotte Murphy
+-Travis Strade
+-Luan Dunlap"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="." unique_id=1501515165]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 957.0
+offset_right = 1586.0
+offset_bottom = 1152.0
+theme_override_fonts/font = ExtResource("1_i8h6y")
+theme_override_font_sizes/font_size = 150
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

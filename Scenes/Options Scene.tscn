@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cb62nteldyf8s"]
+
+[ext_resource type="Script" uid="uid://cq2q4a4gojxdc" path="res://Scripts/Options.gd" id="1_e0bma"]
+[ext_resource type="Texture2D" uid="uid://brrd6mffdxj5a" path="res://Sprites/Game 26 background.png" id="1_q326w"]
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="2_e0bma"]
+
+[node name="Options" type="Control" unique_id=1775068970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0bma")
+
+[node name="Game26Background" type="Sprite2D" parent="." unique_id=992038158]
+position = Vector2(962, 564)
+texture = ExtResource("1_q326w")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1723722185]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 575.0
+offset_right = 1179.0
+offset_bottom = 1019.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=199012985]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Directions" type="Button" parent="MarginContainer/VBoxContainer" unique_id=344920118]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e0bma")
+theme_override_font_sizes/font_size = 75
+text = "Directions"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer" unique_id=739372394]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e0bma")
+theme_override_font_sizes/font_size = 75
+text = "Credits
+"
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=321513447]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e0bma")
+theme_override_font_sizes/font_size = 75
+text = "Volume
+"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer" unique_id=304459619]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e0bma")
+theme_override_font_sizes/font_size = 75
+text = "Back
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Directions" to="." method="_on_directions_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

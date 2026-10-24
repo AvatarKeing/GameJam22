@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cm08u8k5ymyxi"]
 
 [ext_resource type="Script" uid="uid://bvqngx41mt3uf" path="res://Scripts/menu.gd" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://brrd6mffdxj5a" path="res://Sprites/Game 26 background.png" id="2_158mb"]
 [ext_resource type="FontFile" uid="uid://da1ynrnyxdsm" path="res://Font/PixelWarden.ttf" id="2_xhh6f"]
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="4_wwsa2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhmj0"]
 bg_color = Color(0.416999, 0.607826, 0.871154, 1)
@@ -20,16 +22,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_con2f")
-metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1270048382]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.43452916, 0.43024474, 0.43024477, 1)
+[node name="Game26Background" type="Sprite2D" parent="." unique_id=1562405840]
+position = Vector2(962, 576)
+texture = ExtResource("2_158mb")
 
 [node name="Label" type="Label" parent="." unique_id=387957490]
 layout_mode = 1
@@ -37,14 +33,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -640.0
-offset_top = 48.0
+offset_top = 42.0
 offset_right = 640.0
 offset_bottom = 279.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.09019608, 0.5647059, 0.34901962, 1)
 theme_override_colors/font_shadow_color = Color(1.0781288e-05, 0.9043947, 0.5707307, 1)
 theme_override_fonts/font = ExtResource("2_xhh6f")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 100
 text = "Possession Obsession"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -69,28 +65,25 @@ theme_override_constants/separation = 14
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1179658159]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_wwsa2")
+theme_override_font_sizes/font_size = 75
 theme_override_styles/hover = SubResource("StyleBoxFlat_yhmj0")
 text = "Play"
 
-[node name="Directions" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2008145728]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Directions"
-
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=981612546]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_wwsa2")
+theme_override_font_sizes/font_size = 75
 theme_override_styles/hover = SubResource("StyleBoxFlat_c23a0")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658365688]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_wwsa2")
+theme_override_font_sizes/font_size = 75
 theme_override_styles/hover = SubResource("StyleBoxFlat_2wkxx")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Directions" to="." method="_on_tutorials_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
