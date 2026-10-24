@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var spr: Sprite2D = $Sprite2D
+
 # State Machine
 enum ghostState {FOCUS, POSSESS}
 var currentState
@@ -34,12 +36,16 @@ func _input(event: InputEvent) -> void:
 				leave_host()
 	if currentState == ghostState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
+			spr.frame = 1
 			_move_ghost(_grid_to_pixel(-1, 0))
 		if event.is_action_pressed("right") && can_move && can_move_right:
+			spr.frame = 3
 			_move_ghost(_grid_to_pixel(1, 0))
 		if event.is_action_pressed("up") && can_move && can_move_top:
+			spr.frame = 2
 			_move_ghost(_grid_to_pixel(0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
+			spr.frame = 0
 			_move_ghost(_grid_to_pixel(0, 1))
 
 func _move_ghost(target_pos: Vector2):

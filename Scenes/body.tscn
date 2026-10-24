@@ -19,29 +19,39 @@ texture = ExtResource("1_35550")
 
 [node name="TopCollider" type="Area2D" parent="." unique_id=1075411084]
 position = Vector2(0, -128)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=645251385]
 shape = SubResource("RectangleShape2D_q0t65")
 
 [node name="BottomCollider" type="Area2D" parent="." unique_id=393581158]
 position = Vector2(0, 128)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=1302374299]
 shape = SubResource("RectangleShape2D_q0t65")
 
 [node name="LeftCollider" type="Area2D" parent="." unique_id=677575190]
 position = Vector2(-128, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider" unique_id=715080007]
 shape = SubResource("RectangleShape2D_q0t65")
 
 [node name="RightCollider" type="Area2D" parent="." unique_id=525459963]
 position = Vector2(128, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=787700590]
 shape = SubResource("RectangleShape2D_q0t65")
 
 [node name="BodyBase" type="Area2D" parent="." unique_id=703859446 groups=["Possessables"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBase" unique_id=1913353133]
 shape = SubResource("RectangleShape2D_q0t65")

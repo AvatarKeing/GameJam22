@@ -1,26 +1,21 @@
 [gd_scene format=3 uid="uid://bi0bm6bhqas3u"]
 
 [ext_resource type="Script" uid="uid://qi6pgu5fkgbx" path="res://Scripts/crossbow.gd" id="1_1kmap"]
-[ext_resource type="Texture2D" uid="uid://c1yqkgaquxe21" path="res://icon.svg" id="2_rseqn"]
+[ext_resource type="Texture2D" uid="uid://bkolpr765fsy3" path="res://Sprites/CrossbowSheet.png" id="1_rseqn"]
+[ext_resource type="Texture2D" uid="uid://ub3xk0mpbxcd" path="res://Sprites/Arrow.png" id="3_rseqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
 size = Vector2(46, 128)
-
-[sub_resource type="Gradient" id="Gradient_1kmap"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_m1hyp"]
-gradient = SubResource("Gradient_1kmap")
-width = 16
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxam5"]
 size = Vector2(128, 128)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=1832230325]
-modulate = Color(0.9599789, 0.40782756, 0, 1)
-texture = ExtResource("2_rseqn")
+texture = ExtResource("1_rseqn")
+hframes = 3
 script = ExtResource("1_1kmap")
 
-[node name="Arrow" type="Area2D" parent="." unique_id=1216602162]
+[node name="Arrow" type="Area2D" parent="." unique_id=1216602162 groups=["Arrow"]]
 collision_layer = 2
 collision_mask = 2
 
@@ -29,7 +24,8 @@ shape = SubResource("RectangleShape2D_q0t65")
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=847673003]
 position = Vector2(0.665, 0)
-texture = SubResource("GradientTexture2D_m1hyp")
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_rseqn")
 
 [node name="BodyBase" type="Area2D" parent="." unique_id=515577231 groups=["Possessables"]]
 
