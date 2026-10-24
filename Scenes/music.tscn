@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uxl1o1qem55i"]
+
+[ext_resource type="Script" uid="uid://b4yyhwvrobgsv" path="res://Scripts/music.gd" id="1_timup"]
+[ext_resource type="AudioStream" uid="uid://eh6vsppd3fy1" path="res://Audio/BGS Jam 2026-001.ogg" id="1_vi5kw"]
+[ext_resource type="AudioStream" uid="uid://c48dxjh1hy0ej" path="res://Audio/BGS Jam 2026-002.ogg" id="2_timup"]
+[ext_resource type="AudioStream" uid="uid://dxp7g4yvw7cfa" path="res://Audio/BGS Jam 2026-003.ogg" id="3_8dy0s"]
+[ext_resource type="AudioStream" uid="uid://cslyjrpv2yxiq" path="res://Audio/BGS Jam 2026-004.ogg" id="4_ckt5d"]
+
+[node name="Music" type="Node2D" unique_id=1006206648]
+script = ExtResource("1_timup")
+
+[node name="001" type="AudioStreamPlayer2D" parent="." unique_id=666368315]
+stream = ExtResource("1_vi5kw")
+
+[node name="002" type="AudioStreamPlayer2D" parent="." unique_id=1353591797]
+stream = ExtResource("2_timup")
+
+[node name="003" type="AudioStreamPlayer2D" parent="." unique_id=1427169425]
+stream = ExtResource("3_8dy0s")
+
+[node name="004" type="AudioStreamPlayer2D" parent="." unique_id=1518893495]
+stream = ExtResource("4_ckt5d")

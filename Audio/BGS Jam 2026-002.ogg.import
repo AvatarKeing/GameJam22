@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c48dxjh1hy0ej"
+path="res://.godot/imported/BGS Jam 2026-002.ogg-935d4b7a446045862c8469b9e576dc9b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/BGS Jam 2026-002.ogg"
+dest_files=["res://.godot/imported/BGS Jam 2026-002.ogg-935d4b7a446045862c8469b9e576dc9b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

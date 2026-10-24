@@ -9,6 +9,8 @@ size = Vector2(1928, 127)
 [node name="Main" type="Node2D" unique_id=2135830632]
 
 [node name="Ghost" parent="." unique_id=764349992 instance=ExtResource("1_2llne")]
+offset = 128
+ghost_position = Vector2(320, 320)
 
 [node name="Body" parent="." unique_id=1216602162 instance=ExtResource("2_q12u6")]
 position = Vector2(832, 320)

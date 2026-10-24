@@ -21,8 +21,14 @@ var can_move_bottom = true
 var can_possess = false
 var object_to_possess = null
 
+# music variables
+var music_scene
+var music_instance
+
 func _ready() -> void:
 	currentState = ghostState.FOCUS
+	music_scene = load("res://Scenes/music.tscn")
+	music_instance = music_scene.instantiate()
 
 func _input(event: InputEvent) -> void:
 	if currentState == ghostState.FOCUS:
@@ -92,3 +98,7 @@ func _on_ghost_base_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Possessables"):
 		can_possess = false
 		object_to_possess = null
+
+func _backgroundmusic(area: Area2D) -> void:
+	music_instance
+	pass
