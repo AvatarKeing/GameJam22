@@ -25,6 +25,13 @@ func _ready() -> void:
 	currentState = ghostState.FOCUS
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		match currentState:
+			ghostState.FOCUS:
+				if can_possess:
+					possess_host()
+			ghostState.POSSESS:
+				leave_host()
 	if currentState == ghostState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
 			_move_ghost(_grid_to_pixel(-1, 0))
@@ -34,11 +41,6 @@ func _input(event: InputEvent) -> void:
 			_move_ghost(_grid_to_pixel(0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
 			_move_ghost(_grid_to_pixel(0, 1))
-		if event.is_action_pressed("interact") && can_possess:
-			object_to_possess.currentState = object_to_possess.moveState.FOCUS
-			object_to_possess.possessor = self
-			visible = false
-			currentState = ghostState.POSSESS
 
 func _move_ghost(target_pos: Vector2):
 	can_move = false
@@ -91,4 +93,15 @@ func _on_ghost_base_area_entered(area: Area2D) -> void:
 func _on_ghost_base_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Possessables"):
 		can_possess = false
-		object_to_possess = null
+
+func possess_host():
+	currentState = ghostState.POSSESS
+	visible = false
+	object_to_possess.currentState = object_to_possess.moveState.FOCUS
+
+func leave_host():
+	currentState = ghostState.FOCUS
+	position = object_to_possess.position
+	ghost_position = object_to_possess.object_position
+	visible = true
+	object_to_possess.currentState = object_to_possess.moveState.DEAD

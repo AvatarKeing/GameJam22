@@ -8,7 +8,7 @@ var possessor
 # Grid Variables
 @export_category("Grid Variables")
 @export var offset = 128
-@export var body_position: Vector2 = Vector2(832, 320)
+@export var object_position: Vector2 = Vector2(832, 320)
 
 # movement variables
 @export_category("Movement Variables")
@@ -35,19 +35,13 @@ func _input(event: InputEvent) -> void:
 			_move_ghost(_grid_to_pixel(0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
 			_move_ghost(_grid_to_pixel(0, 1))
-		if event.is_action_pressed("interact"):
-			possessor.currentState = possessor.ghostState.FOCUS
-			possessor.position = position
-			possessor.ghost_position = body_position
-			possessor.visible = true
-			currentState = moveState.DEAD
 
 func _move_ghost(target_pos: Vector2):
 	can_move = false
-	body_position += target_pos
+	object_position += target_pos
 	var tween = create_tween()
 	
-	tween.tween_property(self, "position", body_position, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "position", object_position, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	can_move = true
 
 func _grid_to_pixel(x: int, y: int) -> Vector2:
