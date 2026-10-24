@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dvdjr6ibuvf5l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m21h"]
+radius = 24.0
+height = 74.0
+
+[node name="Node2D" type="Node2D" unique_id=2135830632]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=466103748]
+polygon = PackedVector2Array(-4, 1, 727, 2, 1147, -5, 1156, 638, -6, 655, 0, 2, -11, 3, -94, 660, 1111, 770, 1232, 637, 1217, -80, -62, -87, -11, 3, -1, -1, 0, 1, 0, 0, 0, 1, 0, 2)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1174513603]
+position = Vector2(192, 466)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=1644845051]
+shape = SubResource("CapsuleShape2D_8m21h")
