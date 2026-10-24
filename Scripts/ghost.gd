@@ -19,7 +19,7 @@ var can_move_bottom = true
 
 # possession variables
 var can_possess = false
-var object_to_possess = null
+var object_to_possess : Node = null
 
 func _ready() -> void:
 	currentState = ghostState.FOCUS
@@ -100,6 +100,9 @@ func possess_host():
 	object_to_possess.currentState = object_to_possess.moveState.FOCUS
 
 func leave_host():
+	if object_to_possess.has_method("unposses"):
+		object_to_possess.unposses()
+	
 	currentState = ghostState.FOCUS
 	position = object_to_possess.position
 	ghost_position = object_to_possess.object_position
