@@ -1,16 +1,46 @@
 [gd_scene format=3 uid="uid://dvdjr6ibuvf5l"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m21h"]
-radius = 24.0
-height = 74.0
+[ext_resource type="PackedScene" uid="uid://btunge53iyc6r" path="res://Scenes/ghost.tscn" id="1_2llne"]
+[ext_resource type="PackedScene" uid="uid://nlywkm7o2xm0" path="res://Scenes/body.tscn" id="2_q12u6"]
 
-[node name="Node2D" type="Node2D" unique_id=2135830632]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q12u6"]
+size = Vector2(1928, 127)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=466103748]
-polygon = PackedVector2Array(-4, 1, 727, 2, 1147, -5, 1156, 638, -6, 655, 0, 2, -11, 3, -94, 660, 1111, 770, 1232, 637, 1217, -80, -62, -87, -11, 3, -1, -1, 0, 1, 0, 0, 0, 1, 0, 2)
+[node name="Main" type="Node2D" unique_id=2135830632]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1174513603]
-position = Vector2(192, 466)
+[node name="Ghost" parent="." unique_id=764349992 instance=ExtResource("1_2llne")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=1644845051]
-shape = SubResource("CapsuleShape2D_8m21h")
+[node name="Borders" type="Node" parent="." unique_id=1637913695]
+
+[node name="LeftBorder" type="Area2D" parent="Borders" unique_id=2026346686 groups=["Border"]]
+position = Vector2(53, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder" unique_id=375315322 groups=["Border"]]
+position = Vector2(10, -1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="RightBorder" type="Area2D" parent="Borders" unique_id=86937801 groups=["Border"]]
+position = Vector2(1847, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder" unique_id=192896742 groups=["Border"]]
+position = Vector2(10, -1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="TopBorder" type="Area2D" parent="Borders" unique_id=1113579638 groups=["Border"]]
+position = Vector2(192, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/TopBorder" unique_id=900648067 groups=["Border"]]
+position = Vector2(770, 0)
+shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="BottomBorder" type="Area2D" parent="Borders" unique_id=1673893714 groups=["Border"]]
+position = Vector2(192, 1094)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder" unique_id=1206794276 groups=["Border"]]
+position = Vector2(770, 0)
+shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="Body" parent="." unique_id=1216602162 instance=ExtResource("2_q12u6")]
+position = Vector2(832, 320)
