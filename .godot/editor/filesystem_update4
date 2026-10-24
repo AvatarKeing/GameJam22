@@ -1,2 +1,3 @@
 res://Scenes/menu.tscn
-res://Scenes/Level1.tscn
+res://Scenes/ghost.tscn
+res://Scripts/ghost.gd

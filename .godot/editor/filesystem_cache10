@@ -1,10 +1,10 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792847864
-icon.svg::CompressedTexture2D::6648286013790495032::1792804552::1792809807::1::::<><><>0<>0<>d6caac09b3f0dfa34198e2c559ae25c0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://Assets/::1792809716
-::res://global/::1792809717
-::res://Scenes/::1792847855
-Level1.tscn::PackedScene::8639999352826728099::1792846770::0::1::::<><><>0<>0<><>::
-menu.tscn::PackedScene::5668758061647710230::1792847846::0::1::::<><><>0<>0<><>::uid://ceeru27x32eh0::::res://scripts/menu.gd<>uid://d4hc54ro3bl4u::::res://TitleScreenV3.png<>uid://cavi5mvnyhkw4::::res://fonts/Lunar Escape.otf
-::res://Scripts/::1792847855
-::res://Sounds/::1792809717
+::res://::1792848430
+icon.svg::CompressedTexture2D::6648286013790495032::1792847349::1792848439::1::::<><><>0<>0<>d6caac09b3f0dfa34198e2c559ae25c0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Scenes/::1792848430
+Level1.tscn::PackedScene::8639999352826728099::1792847349::0::1::::<><><>0<>0<><>::
+menu.tscn::PackedScene::5668758061647710230::1792848430::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1792848430
+menu.gd::GDScript::3894217733860649205::1792848430::0::1::::<>Control<><>0<>0<><>::
+::res://Scripts/global/::1792848430
+global.gd::GDScript::1547319074714800478::1792848430::0::1::::<>Node<><>0<>0<><>::
