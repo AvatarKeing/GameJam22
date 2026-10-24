@@ -4,9 +4,13 @@
 [ext_resource type="Script" uid="uid://c12yo5yhrtbo0" path="res://Scripts/ghost.gd" id="1_e3r4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpdtx"]
-size = Vector2(64, 64)
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(128, 128)
 
 [node name="Ghost" type="Area2D" unique_id=764349992]
+position = Vector2(192, 192)
 script = ExtResource("1_e3r4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411668767]
@@ -14,5 +18,28 @@ shape = SubResource("RectangleShape2D_vpdtx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=572261056]
 modulate = Color(1, 1, 1, 0.5019608)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3mxmt")
+
+[node name="LeftCollider" type="Area2D" parent="." unique_id=1295553811]
+position = Vector2(-128, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider" unique_id=187437395]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="TopCollider" type="Area2D" parent="." unique_id=1326514521]
+position = Vector2(0, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=1169889335]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="BottomCollider" type="Area2D" parent="." unique_id=761991328]
+position = Vector2(0, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=722378245]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="RightCollider" type="Area2D" parent="." unique_id=1340688133]
+position = Vector2(128, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=198420370]
+shape = SubResource("RectangleShape2D_g4v7s")
