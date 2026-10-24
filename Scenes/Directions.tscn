@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://drf1sn7a4taf"]
+
+[ext_resource type="Script" uid="uid://b737pvbmqn2v" path="res://Scripts/directions.gd" id="1_2yxge"]
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="1_g02yo"]
+[ext_resource type="Texture2D" uid="uid://th54vyftbq0k" path="res://Sprites/keyboard_w.png" id="2_2yxge"]
+[ext_resource type="Texture2D" uid="uid://bmgk0d5muague" path="res://Sprites/keyboard_a.png" id="3_qg3r5"]
+[ext_resource type="Texture2D" uid="uid://b4mitrsu3467o" path="res://Sprites/keyboard_s.png" id="4_oayjs"]
+[ext_resource type="Texture2D" uid="uid://df0ljk46dcuv" path="res://Sprites/keyboard_d.png" id="5_e4vi2"]
+[ext_resource type="Texture2D" uid="uid://d17pr4b4vmfvn" path="res://Sprites/keyboard_arrows_all.png" id="6_64qqp"]
+[ext_resource type="Texture2D" uid="uid://cvnii27uaa6wx" path="res://Sprites/keyboard_space.png" id="7_neemp"]
+[ext_resource type="Texture2D" uid="uid://3tmx1d0yhpmv" path="res://Sprites/keyboard_z.png" id="8_35irk"]
+[ext_resource type="Texture2D" uid="uid://0t008ecn3y0g" path="res://Sprites/keyboard_e.png" id="9_adayc"]
+
+[node name="Directions" type="Control" unique_id=1758248457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2yxge")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=223237814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1539257396]
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("1_g02yo")
+theme_override_font_sizes/font_size = 200
+text = "Directions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=154645422]
+layout_mode = 0
+offset_top = 384.0
+offset_right = 833.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 75
+text = "Move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=154835078]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 384.0
+offset_right = 1917.0
+offset_bottom = 623.0
+theme_override_font_sizes/font_size = 75
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardW" type="Sprite2D" parent="." unique_id=990553872]
+position = Vector2(228, 679)
+texture = ExtResource("2_2yxge")
+
+[node name="KeyboardA" type="Sprite2D" parent="." unique_id=940364912]
+position = Vector2(110, 800)
+texture = ExtResource("3_qg3r5")
+
+[node name="KeyboardS" type="Sprite2D" parent="." unique_id=1660400905]
+position = Vector2(230, 805)
+texture = ExtResource("4_oayjs")
+
+[node name="KeyboardD" type="Sprite2D" parent="." unique_id=1465849741]
+position = Vector2(354, 805)
+texture = ExtResource("5_e4vi2")
+
+[node name="KeyboardArrowsAll" type="Sprite2D" parent="." unique_id=905803390]
+position = Vector2(603, 749)
+scale = Vector2(3.5468752, 3.4218748)
+texture = ExtResource("6_64qqp")
+
+[node name="KeyboardSpace" type="Sprite2D" parent="." unique_id=1263834535]
+position = Vector2(1360, 775.5)
+scale = Vector2(2, 1.539062)
+texture = ExtResource("7_neemp")
+
+[node name="KeyboardZ" type="Sprite2D" parent="." unique_id=2032089995]
+position = Vector2(1550, 775)
+texture = ExtResource("8_35irk")
+
+[node name="KeyboardE" type="Sprite2D" parent="." unique_id=1464813994]
+position = Vector2(1695, 773)
+texture = ExtResource("9_adayc")
+
+[node name="Button" type="Button" parent="." unique_id=325810912]
+layout_mode = 0
+offset_top = 953.0
+offset_right = 1926.0
+offset_bottom = 1153.0
+theme_override_fonts/font = ExtResource("1_g02yo")
+theme_override_font_sizes/font_size = 150
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
