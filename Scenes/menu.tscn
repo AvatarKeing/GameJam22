@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cm08u8k5ymyxi"]
 
 [ext_resource type="Script" uid="uid://bvqngx41mt3uf" path="res://Scripts/menu.gd" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://da1ynrnyxdsm" path="res://Font/PixelWarden.ttf" id="2_xhh6f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhmj0"]
 bg_color = Color(0.416999, 0.607826, 0.871154, 1)
@@ -28,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.513233, 0.513233, 0.513233, 1)
+color = Color(0.43452916, 0.43024474, 0.43024477, 1)
 
 [node name="Label" type="Label" parent="." unique_id=387957490]
 layout_mode = 1
@@ -40,10 +41,11 @@ offset_top = 48.0
 offset_right = 640.0
 offset_bottom = 279.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0.457808, 0.897168, 1)
-theme_override_colors/font_shadow_color = Color(0.387679, 0.822014, 1, 1)
+theme_override_colors/font_color = Color(0.09019608, 0.5647059, 0.34901962, 1)
+theme_override_colors/font_shadow_color = Color(1.0781288e-05, 0.9043947, 0.5707307, 1)
+theme_override_fonts/font = ExtResource("2_xhh6f")
 theme_override_font_sizes/font_size = 70
-text = "File-Pathing Frenzy"
+text = "Possession Obsession"
 horizontal_alignment = 1
 vertical_alignment = 1
 

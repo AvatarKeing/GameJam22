@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	pass
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_area_of_ship.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level1.tscn")
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
