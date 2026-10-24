@@ -17,6 +17,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if currentState == moveState.FOCUS:
+		frame = 1
 		if Input.is_action_pressed("left"):
 			rotate(-rotate_speed * delta)
 		if Input.is_action_pressed("right"):
@@ -28,6 +29,7 @@ func unposses() -> void:
 var shoot_tween : Tween
 
 func _shoot() -> void:
+	frame = 2
 	if shoot_tween != null:
 		shoot_tween.kill()
 		
@@ -38,6 +40,7 @@ func _shoot() -> void:
 	shoot_tween.tween_callback(reset_arrow)
 	
 func reset_arrow() -> void:
+	frame = 0
 	if shoot_tween != null:
 		shoot_tween.kill()
 	$Arrow.visible = false
