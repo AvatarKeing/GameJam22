@@ -10,12 +10,23 @@ size = Vector2(1928, 127)
 
 [node name="Ghost" parent="." unique_id=764349992 instance=ExtResource("1_2llne")]
 
+[node name="Body" parent="." unique_id=1216602162 instance=ExtResource("2_q12u6")]
+position = Vector2(832, 320)
+
 [node name="Borders" type="Node" parent="." unique_id=1637913695]
 
 [node name="LeftBorder" type="Area2D" parent="Borders" unique_id=2026346686 groups=["Border"]]
 position = Vector2(53, 130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder" unique_id=375315322 groups=["Border"]]
+position = Vector2(10, -1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="LeftBorder" type="Area2D" parent="Borders/LeftBorder" unique_id=358589024 groups=["Wall"]]
+position = Vector2(513, -401)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder/LeftBorder" unique_id=1314229461 groups=["Border"]]
 position = Vector2(10, -1)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_q12u6")
@@ -41,6 +52,3 @@ position = Vector2(192, 1094)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder" unique_id=1206794276 groups=["Border"]]
 position = Vector2(770, 0)
 shape = SubResource("RectangleShape2D_q12u6")
-
-[node name="Body" parent="." unique_id=1216602162 instance=ExtResource("2_q12u6")]
-position = Vector2(832, 320)

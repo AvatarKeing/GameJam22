@@ -83,12 +83,12 @@ func _on_right_collider_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Border"):
 		can_move_right = true
 
-func _on_ghost_enter(area: Area2D) -> void:
+func _on_ghost_base_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Possessables"):
 		can_possess = true
-		object_to_possess = area
+		object_to_possess = area.get_parent()
 
-func _on_ghost_exit(area: Area2D) -> void:
+func _on_ghost_base_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Possessables"):
 		can_possess = false
 		object_to_possess = null

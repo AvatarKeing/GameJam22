@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
 size = Vector2(128, 128)
 
-[node name="Body" type="Area2D" unique_id=1216602162 groups=["Possessables"]]
+[node name="Body" type="Area2D" unique_id=1216602162]
+z_index = 1
 script = ExtResource("1_7h43o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975470393]
@@ -38,6 +39,11 @@ shape = SubResource("RectangleShape2D_q0t65")
 position = Vector2(128, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=787700590]
+shape = SubResource("RectangleShape2D_q0t65")
+
+[node name="BodyBase" type="Area2D" parent="." unique_id=703859446 groups=["Possessables"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBase" unique_id=1913353133]
 shape = SubResource("RectangleShape2D_q0t65")
 
 [connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]

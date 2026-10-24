@@ -54,33 +54,33 @@ func _grid_to_pixel(x: int, y: int) -> Vector2:
 	return Vector2(offset * x, offset * y)
 
 func _on_left_collider_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_left = false
 
 func _on_left_collider_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_left = true
 
 func _on_top_collider_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_top = false
 
 func _on_top_collider_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_top = true
 
 func _on_bottom_collider_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_bottom = false
 
 func _on_bottom_collider_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_bottom = true
 
 func _on_right_collider_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_right = false
 
 func _on_right_collider_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Border"):
+	if area.is_in_group("Border") || area.is_in_group("Wall"):
 		can_move_right = true

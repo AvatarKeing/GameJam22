@@ -44,8 +44,12 @@ position = Vector2(128, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=198420370]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[connection signal="area_entered" from="." to="." method="_on_ghost_enter"]
-[connection signal="area_exited" from="." to="." method="_on_ghost_exit"]
+[node name="GhostBase" type="Area2D" parent="." unique_id=997395490]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostBase" unique_id=873016026]
+shape = SubResource("RectangleShape2D_vpdtx")
+
 [connection signal="area_entered" from="LeftCollider" to="." method="_on_left_collider_area_entered"]
 [connection signal="area_exited" from="LeftCollider" to="." method="_on_left_collider_area_exited"]
 [connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]
@@ -54,3 +58,5 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [connection signal="area_exited" from="BottomCollider" to="." method="_on_bottom_collider_area_exited"]
 [connection signal="area_entered" from="RightCollider" to="." method="_on_right_collider_area_entered"]
 [connection signal="area_exited" from="RightCollider" to="." method="_on_right_collider_area_exited"]
+[connection signal="area_entered" from="GhostBase" to="." method="_on_ghost_base_area_entered"]
+[connection signal="area_exited" from="GhostBase" to="." method="_on_ghost_base_area_exited"]
