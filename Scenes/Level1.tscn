@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://btunge53iyc6r" path="res://Scenes/ghost.tscn" id="1_2llne"]
 [ext_resource type="Texture2D" uid="uid://d3o3mp2uncauy" path="res://Sprites/WallTiles.png" id="1_joc8x"]
 [ext_resource type="PackedScene" uid="uid://nlywkm7o2xm0" path="res://Scenes/body.tscn" id="2_q12u6"]
+[ext_resource type="PackedScene" uid="uid://bi0bm6bhqas3u" path="res://Scenes/crossbow.tscn" id="3_joc8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jghel"]
 texture = ExtResource("1_joc8x")
@@ -151,3 +152,6 @@ position = Vector2(192, 1094)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomBorder" unique_id=1206794276 groups=["Border"]]
 position = Vector2(770, 0)
 shape = SubResource("RectangleShape2D_q12u6")
+
+[node name="Area2D" parent="." unique_id=592380359 instance=ExtResource("3_joc8x")]
+position = Vector2(1088, 448)
