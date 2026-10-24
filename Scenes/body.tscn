@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
 size = Vector2(128, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhqrm"]
-size = Vector2(128, 128)
-
 [node name="Body" type="Area2D" unique_id=1216602162 groups=["Possessables"]]
 script = ExtResource("1_7h43o")
 
@@ -19,26 +16,35 @@ shape = SubResource("RectangleShape2D_q0t65")
 modulate = Color(0.9599789, 0.40782756, 0, 1)
 texture = ExtResource("1_35550")
 
-[node name="LeftCollider" type="Area2D" parent="." unique_id=259949346]
-position = Vector2(-128, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider" unique_id=1594079762]
-shape = SubResource("RectangleShape2D_vhqrm")
-
-[node name="TopCollider" type="Area2D" parent="." unique_id=878591522]
+[node name="TopCollider" type="Area2D" parent="." unique_id=1075411084]
 position = Vector2(0, -128)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=1510765333]
-shape = SubResource("RectangleShape2D_vhqrm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=645251385]
+shape = SubResource("RectangleShape2D_q0t65")
 
-[node name="BottomCollider" type="Area2D" parent="." unique_id=26766632]
+[node name="BottomCollider" type="Area2D" parent="." unique_id=393581158]
 position = Vector2(0, 128)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=191760810]
-shape = SubResource("RectangleShape2D_vhqrm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=1302374299]
+shape = SubResource("RectangleShape2D_q0t65")
 
-[node name="RightCollider" type="Area2D" parent="." unique_id=1256113126]
+[node name="LeftCollider" type="Area2D" parent="." unique_id=677575190]
+position = Vector2(-128, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider" unique_id=715080007]
+shape = SubResource("RectangleShape2D_q0t65")
+
+[node name="RightCollider" type="Area2D" parent="." unique_id=525459963]
 position = Vector2(128, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=1488817459]
-shape = SubResource("RectangleShape2D_vhqrm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=787700590]
+shape = SubResource("RectangleShape2D_q0t65")
+
+[connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]
+[connection signal="area_exited" from="TopCollider" to="." method="_on_top_collider_area_exited"]
+[connection signal="area_entered" from="BottomCollider" to="." method="_on_bottom_collider_area_entered"]
+[connection signal="area_exited" from="BottomCollider" to="." method="_on_bottom_collider_area_exited"]
+[connection signal="area_entered" from="LeftCollider" to="." method="_on_left_collider_area_entered"]
+[connection signal="area_exited" from="LeftCollider" to="." method="_on_left_collider_area_exited"]
+[connection signal="area_entered" from="RightCollider" to="." method="_on_right_collider_area_entered"]
+[connection signal="area_exited" from="RightCollider" to="." method="_on_right_collider_area_exited"]

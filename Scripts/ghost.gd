@@ -41,7 +41,6 @@ func _input(event: InputEvent) -> void:
 			currentState = ghostState.POSSESS
 
 func _move_ghost(target_pos: Vector2):
-	var move_pos = ghost_position + target_pos
 	can_move = false
 	ghost_position += target_pos
 	var tween = create_tween()
