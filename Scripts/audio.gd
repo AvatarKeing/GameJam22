@@ -26,6 +26,7 @@ func _force_music() -> void:
 			actual_nodes[n].volume_db = 0
 		else:
 			actual_nodes[n].volume_db = -100
+	correct_volume = [true,true,true,true]
 
 static func _mainmenu() -> void:
 	is_playing = [false,true,true,false]
@@ -43,8 +44,24 @@ static func play_sfx(track: Global.sfx_type) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_force_music() #_check_correct_volume
+	for n in 4:
+		if (!correct_volume[n]):
+			_force_correct_volume(n, delta)
 
 func _check_correct_volume(position: int) -> bool:
-	# FADE IN AND OUT
-	return true
+	if (!is_playing[position] && actual_nodes[position].volume_db < -50):
+		actual_nodes[position].volume_db = -100
+		return true
+	if (is_playing[position] && actual_nodes[position].volume_db > 1):
+		actual_nodes[position].volume_db = 1
+		return true
+	return false
+
+func _force_correct_volume(position: int, delta: float) -> void:
+	for n in 4:
+		if (!correct_volume[n]):
+			if (is_playing[n]):
+				actual_nodes[n].volume_db = actual_nodes[n].volume_db - (delta*100)
+			else:
+				actual_nodes[n].volume_db = actual_nodes[n].volume_db - (delta*100)
+			correct_volume[n] = _check_correct_volume(n)
