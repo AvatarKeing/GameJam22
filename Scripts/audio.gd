@@ -44,24 +44,25 @@ static func play_sfx(track: Global.sfx_type) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	for n in 4:
-		if (!correct_volume[n]):
-			_force_correct_volume(n, delta)
+	_force_music()
+##	for n in 4:
+##		if (!correct_volume[n]):
+##			_force_correct_volume(n, delta)
 
-func _check_correct_volume(position: int) -> bool:
-	if (!is_playing[position] && actual_nodes[position].volume_db < -50):
-		actual_nodes[position].volume_db = -100
-		return true
-	if (is_playing[position] && actual_nodes[position].volume_db > 1):
-		actual_nodes[position].volume_db = 1
-		return true
-	return false
+## func _check_correct_volume(position: int) -> bool:
+## 	if (!is_playing[position] && actual_nodes[position].volume_db < -50):
+##		actual_nodes[position].volume_db = -100
+##		return true
+##	if (is_playing[position] && actual_nodes[position].volume_db > 1):
+##		actual_nodes[position].volume_db = 1
+##		return true
+##	return false
 
-func _force_correct_volume(position: int, delta: float) -> void:
-	for n in 4:
-		if (!correct_volume[n]):
-			if (is_playing[n]):
-				actual_nodes[n].volume_db = actual_nodes[n].volume_db - (delta*100)
-			else:
-				actual_nodes[n].volume_db = actual_nodes[n].volume_db - (delta*100)
-			correct_volume[n] = _check_correct_volume(n)
+##func _force_correct_volume(position: int, delta: float) -> void:
+##	for n in 4:
+##		if (!correct_volume[n]):
+##			if (is_playing[n]):
+##				actual_nodes[n].volume_db = actual_nodes[n].volume_db + (delta*100)
+##			else:
+##				actual_nodes[n].volume_db = actual_nodes[n].volume_db - (delta*100)
+##			correct_volume[n] = _check_correct_volume(n)

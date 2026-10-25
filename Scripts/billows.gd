@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 	object_position = position
 
 func unposses() -> void:
+	Audio.get_script().play_sfx(Global.sfx_type.BELLOWS)
 	$RayCast2D.enabled = true
 	$RayCast2D.force_raycast_update()
 	var col_obj : Object = $RayCast2D.get_collider()
