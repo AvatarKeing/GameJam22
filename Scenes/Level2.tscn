@@ -119,6 +119,9 @@ size = Vector2(2168, 232)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70df5"]
 size = Vector2(1896, 220)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(96, 656)
+
 [node name="Level2" type="Node2D" unique_id=752347282]
 
 [node name="Tiles" type="TileMap" parent="." unique_id=803667007]
@@ -158,6 +161,8 @@ dir = Vector2(0, 1)
 [node name="Borders" type="Node" parent="." unique_id=1033989495]
 
 [node name="LeftRight" type="Area2D" parent="Borders" unique_id=361182178 groups=["Border"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftRight" unique_id=1375284212]
 position = Vector2(0, 564)
@@ -168,6 +173,8 @@ position = Vector2(1920, 568)
 shape = SubResource("RectangleShape2D_ehjmi")
 
 [node name="UpDown" type="Area2D" parent="Borders" unique_id=1798864573 groups=["Border"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/UpDown" unique_id=801739815]
 position = Vector2(964, -28)
@@ -176,3 +183,17 @@ shape = SubResource("RectangleShape2D_p4u3k")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/UpDown" unique_id=1429725405]
 position = Vector2(1092, 1166)
 shape = SubResource("RectangleShape2D_70df5")
+
+[node name="Walls" type="Node" parent="." unique_id=1925180982]
+
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=975135310 groups=["Wall"]]
+position = Vector2(576, 296)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=229434522 groups=["Wall"]]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Area2D" unique_id=324193506 groups=["Wall"]]
+position = Vector2(776, -128)
+shape = SubResource("RectangleShape2D_yf5fn")
