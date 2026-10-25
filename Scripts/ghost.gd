@@ -100,5 +100,7 @@ func _on_ghost_base_area_exited(area: Area2D) -> void:
 		object_to_possess = null
 
 func _backgroundmusic(area: Area2D) -> void:
-	music_instance
+	# fix lmao?
+	var background = music_instance.get_node().get_script()
+	background._play(2)
 	pass

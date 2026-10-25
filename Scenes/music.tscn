@@ -11,12 +11,16 @@ script = ExtResource("1_timup")
 
 [node name="001" type="AudioStreamPlayer2D" parent="." unique_id=666368315]
 stream = ExtResource("1_vi5kw")
+autoplay = true
 
 [node name="002" type="AudioStreamPlayer2D" parent="." unique_id=1353591797]
 stream = ExtResource("2_timup")
+autoplay = true
 
 [node name="003" type="AudioStreamPlayer2D" parent="." unique_id=1427169425]
 stream = ExtResource("3_8dy0s")
+autoplay = true
 
 [node name="004" type="AudioStreamPlayer2D" parent="." unique_id=1518893495]
 stream = ExtResource("4_ckt5d")
+autoplay = true
