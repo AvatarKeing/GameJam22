@@ -31,6 +31,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		match currentState:
 			ghostState.FOCUS:
+				print("Hello!", can_possess)
 				if can_possess:
 					possess_host()
 			ghostState.POSSESS:
@@ -97,6 +98,7 @@ func _on_ghost_base_area_exited(area: Area2D) -> void:
 		can_possess = false
 
 func possess_host():
+	print(object_to_possess)
 	currentState = ghostState.POSSESS
 	visible = false
 	object_to_possess.currentState = object_to_possess.moveState.FOCUS

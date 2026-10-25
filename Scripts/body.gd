@@ -46,7 +46,6 @@ func _grid_to_pixel(x: int, y: int) -> Vector2:
 	return Vector2(offset * x, offset * y)
 
 func check_move(move_dir : Vector2) -> bool:
-	print(move_dir)
 	if move_dir.x > 0 and not can_move_right:
 		return false
 	if move_dir.x < 0 and not can_move_left:

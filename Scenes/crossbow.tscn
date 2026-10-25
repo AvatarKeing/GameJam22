@@ -23,17 +23,25 @@ script = ExtResource("1_1kmap")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989643473]
 shape = SubResource("RectangleShape2D_mxam5")
 
-[node name="Arrow" type="Area2D" parent="." unique_id=1216602162 groups=["Arrow"]]
+[node name="Rotate" type="Node2D" parent="." unique_id=1959477745]
+
+[node name="Arrow" type="Area2D" parent="Rotate" unique_id=1216602162 groups=["Arrow"]]
+unique_name_in_owner = true
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow" unique_id=975470393]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotate/Arrow" unique_id=975470393]
 shape = SubResource("RectangleShape2D_q0t65")
 
-[node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=847673003]
+[node name="Arrow Sprite" type="Sprite2D" parent="Rotate/Arrow" unique_id=847673003]
 position = Vector2(0.665, 0)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("3_rseqn")
+
+[node name="Sprite" type="Sprite2D" parent="Rotate" unique_id=1832230325]
+unique_name_in_owner = true
+texture = ExtResource("1_rseqn")
+hframes = 3
 
 [node name="TopCollider" type="Area2D" parent="." unique_id=201873611]
 position = Vector2(0, -128)
@@ -67,10 +75,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=13605679]
 shape = SubResource("RectangleShape2D_rseqn")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1832230325]
-texture = ExtResource("1_rseqn")
-hframes = 3
-
 [node name="Area2D" type="Area2D" parent="." unique_id=271158654 groups=["Wall"]]
 collision_layer = 3
 collision_mask = 0
@@ -78,7 +82,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=67611646]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[connection signal="area_entered" from="Arrow" to="Sprite" method="_on_arrow_area_entered"]
+[connection signal="area_entered" from="Rotate/Arrow" to="Rotate/Sprite" method="_on_arrow_area_entered"]
 [connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]
 [connection signal="area_exited" from="TopCollider" to="." method="_on_top_collider_area_exited"]
 [connection signal="area_entered" from="BottomCollider" to="." method="_on_bottom_collider_area_entered"]
