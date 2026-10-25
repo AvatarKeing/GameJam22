@@ -32,7 +32,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		match currentState:
 			ghostState.FOCUS:
-				print("Hello!", can_possess)
 				if can_possess:
 					possess_host()
 			ghostState.POSSESS:

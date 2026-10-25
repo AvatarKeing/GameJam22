@@ -12,7 +12,7 @@ func _ready() -> void:
 	# enum sfx_type {BELLOWS, CROSSBOW, MENU_BUTTON, POSSESSION, ROCK_MOVING, SWORD, BREAK}
 	
 	#this stinks. sorey
-	sfx_clips = [ResourceLoader.load("res://Audio/SFX/Bellows final.mp3"),ResourceLoader.load("res://Audio/SFX/Crossbow.mp3"),ResourceLoader.load("res://Audio/SFX/Menu Button.mp3"),ResourceLoader.load("res://Audio/SFX/Possession.mp3"),ResourceLoader.load("res://Audio/SFX/Rock Moving.mp3"),ResourceLoader.load("res://Audio/SFX/Sword.mp3"),ResourceLoader.load("res://Audio/SFX/Wood crate breaking.mp3")]
+	sfx_clips = [ResourceLoader.load("res://Audio/SFX/Bellows final.mp3"),ResourceLoader.load("res://Audio/SFX/CrossBow.mp3"),ResourceLoader.load("res://Audio/SFX/Menu Button.mp3"),ResourceLoader.load("res://Audio/SFX/Possession.mp3"),ResourceLoader.load("res://Audio/SFX/Rock Moving.mp3"),ResourceLoader.load("res://Audio/SFX/Sword.mp3"),ResourceLoader.load("res://Audio/SFX/Wood crate breaking.mp3")]
 	set_process(true)
 	for n in 4:
 		actual_nodes[n].play()
