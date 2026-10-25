@@ -34,25 +34,34 @@ func _process(_delta: float) -> void:
 		moveState.DEAD:
 			NormalSpr.visible = false
 			StatueSpr.visible = true
+			
+var last_move_time : float = -1000.0
 
 func _input(event: InputEvent) -> void:
+	if Time.get_ticks_msec() < last_move_time + .2:
+		return
+	
 	if currentState == moveState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
 			NormalSpr.frame = 1
 			StatueSpr.frame = 1
 			Global.move_to(self, Global._grid_to_pixel(offset, -1, 0))
+			last_move_time = Time.get_ticks_msec()
 		if event.is_action_pressed("right") && can_move && can_move_right:
 			NormalSpr.frame = 3
 			StatueSpr.frame = 3
 			Global.move_to(self, Global._grid_to_pixel(offset, 1, 0))
+			last_move_time = Time.get_ticks_msec()
 		if event.is_action_pressed("up") && can_move && can_move_top:
 			NormalSpr.frame = 2
 			StatueSpr.frame = 2
 			Global.move_to(self, Global._grid_to_pixel(offset, 0, -1))
+			last_move_time = Time.get_ticks_msec()
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
 			NormalSpr.frame = 0
 			StatueSpr.frame = 0
 			Global.move_to(self, Global._grid_to_pixel(offset, 0, 1))
+			last_move_time = Time.get_ticks_msec()
 
 func _move_ghost(target_pos: Vector2):
 	can_move = false

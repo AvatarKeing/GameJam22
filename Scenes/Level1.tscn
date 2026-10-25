@@ -108,7 +108,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_t3or0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slnnj"]
-size = Vector2(2179, 360.00003)
+size = Vector2(592, 215.99997)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysn8j"]
 size = Vector2(88, 360.00003)
@@ -149,7 +149,7 @@ object_position = Vector2(320, 192)
 position = Vector2(566, -272)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall1" unique_id=1314229461 groups=["Border"]]
-position = Vector2(14, -57.5)
+position = Vector2(70, 720)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_slnnj")
 

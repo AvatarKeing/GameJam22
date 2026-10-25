@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b2bk35pvvufpo"]
+[gd_scene format=3 uid="uid://bgt25e2gy2j1v"]
 
 [ext_resource type="Texture2D" uid="uid://d3o3mp2uncauy" path="res://Sprites/WallTiles.png" id="1_llwst"]
 [ext_resource type="PackedScene" uid="uid://cnkg888myqv2u" path="res://Scenes/breakable_wall.tscn" id="2_0plju"]
@@ -125,7 +125,7 @@ size = Vector2(1896, 220)
 size = Vector2(200, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycmr1"]
-size = Vector2(184, 640)
+size = Vector2(184, 496)
 
 [node name="Level2" type="Node2D" unique_id=591139346]
 metadata/_edit_horizontal_guides_ = [2088.0]
@@ -203,5 +203,5 @@ collision_layer = 3
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=227364093 groups=["Wall"]]
-position = Vector2(44, -8)
+position = Vector2(44, 64)
 shape = SubResource("RectangleShape2D_ycmr1")

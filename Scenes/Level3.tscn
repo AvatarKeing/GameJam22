@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bgt25e2gy2j1v"]
+[gd_scene format=3 uid="uid://jgkw7wm3gkfn"]
 
 [ext_resource type="Texture2D" uid="uid://d3o3mp2uncauy" path="res://Sprites/WallTiles.png" id="1_cp0jt"]
 [ext_resource type="PackedScene" uid="uid://cnkg888myqv2u" path="res://Scenes/breakable_wall.tscn" id="2_p6pjf"]
