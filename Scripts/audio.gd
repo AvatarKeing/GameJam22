@@ -32,11 +32,11 @@ static func _mainmenu() -> void:
 	is_playing = [false,true,true,false]
 	correct_volume = [false,false,false,false]
 
-static func _maingamestatue() -> void:
+static func _maingameghost() -> void:
 	is_playing = [true,true,true,false]
 	correct_volume = [false,false,false,false]
 
-static func _maingameghost() -> void:
+static func _maingamestatue() -> void:
 	is_playing = [true,true,true,true]
 	correct_volume = [false,false,false,false]
 
