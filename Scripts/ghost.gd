@@ -101,6 +101,8 @@ func possess_host():
 	currentState = ghostState.POSSESS
 	visible = false
 	object_to_possess.currentState = object_to_possess.moveState.FOCUS
+	if object_to_possess.has_method("possess"):
+		object_to_possess.possess()
 
 func leave_host():
 	if object_to_possess.has_method("unposses"):

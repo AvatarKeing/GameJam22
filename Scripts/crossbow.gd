@@ -41,6 +41,9 @@ func _input(event: InputEvent) -> void:
 				await get_tree().create_timer(0.125).timeout
 				can_rotate = true
 
+func possess() -> void:
+	reset_arrow()
+
 func unposses() -> void:
 	_shoot()
 
@@ -67,10 +70,10 @@ func reset_arrow() -> void:
 
 func _on_arrow_area_entered(area: Area2D) -> void:
 	# TODO: Call whatever function on the object
-	if area.is_in_group("Wall"):
+	if area.is_in_group("Wall") and area != $Area2D:
 		if shoot_tween != null:
 			shoot_tween.kill()
-		reset_arrow()
+			reset_arrow()
 
 
 
