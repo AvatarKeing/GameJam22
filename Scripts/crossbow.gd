@@ -65,12 +65,12 @@ func reset_arrow() -> void:
 	%Arrow.position = Vector2.ZERO
 	%Arrow.process_mode = Node.PROCESS_MODE_DISABLED
 
-func _on_arrow_area_entered(_area: Area2D) -> void:
+func _on_arrow_area_entered(area: Area2D) -> void:
 	# TODO: Call whatever function on the object
-	
-	if shoot_tween != null:
-		shoot_tween.kill()
-	reset_arrow()
+	if area.is_in_group("Wall"):
+		if shoot_tween != null:
+			shoot_tween.kill()
+		reset_arrow()
 
 
 

@@ -82,7 +82,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=67611646]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[connection signal="area_entered" from="Rotate/Arrow" to="Rotate/Sprite" method="_on_arrow_area_entered"]
+[connection signal="area_entered" from="Rotate/Arrow" to="." method="_on_arrow_area_entered"]
 [connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]
 [connection signal="area_exited" from="TopCollider" to="." method="_on_top_collider_area_exited"]
 [connection signal="area_entered" from="BottomCollider" to="." method="_on_bottom_collider_area_entered"]
