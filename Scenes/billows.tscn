@@ -18,6 +18,7 @@ collide_with_bodies = false
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832230325]
 scale = Vector2(4, 4)
 texture = ExtResource("1_cma3m")
+hframes = 2
 
 [node name="BodyBase" type="Area2D" parent="." unique_id=515577231 groups=["Possessables"]]
 
