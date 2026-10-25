@@ -94,11 +94,10 @@ func _on_ghost_base_area_entered(area: Area2D) -> void:
 			object_to_possess = area.get_parent()
 
 func _on_ghost_base_area_exited(area: Area2D) -> void:
-	if area.is_in_group("Possessables"):
+	if area.is_in_group("Possessables") and (area == object_to_possess or area.get_parent() == object_to_possess):
 		can_possess = false
 
 func possess_host():
-	print(object_to_possess)
 	currentState = ghostState.POSSESS
 	visible = false
 	object_to_possess.currentState = object_to_possess.moveState.FOCUS
