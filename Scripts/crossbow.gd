@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 # State Machine
 enum moveState {DEAD, FOCUS}
@@ -13,6 +13,12 @@ var can_rotate = true
 
 const rotate_speed : float = 1.0
 
+var can_move = true
+var can_move_left = true
+var can_move_right = true
+var can_move_top = true
+var can_move_bottom = true
+
 func _ready() -> void:
 	object_position = position
 	currentState = moveState.DEAD
@@ -21,7 +27,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if currentState == moveState.FOCUS:
 		if can_rotate:
-			frame = 1
+			$Sprite.frame = 1
 			if event.is_action_pressed("left"):
 				can_rotate = false
 				var rotTween = create_tween()
@@ -41,7 +47,7 @@ func unposses() -> void:
 var shoot_tween : Tween
 
 func _shoot() -> void:
-	frame = 2
+	$Sprite.frame = 2
 	if shoot_tween != null:
 		shoot_tween.kill()
 		
@@ -52,7 +58,7 @@ func _shoot() -> void:
 	shoot_tween.tween_callback(reset_arrow)
 	
 func reset_arrow() -> void:
-	frame = 0
+	$Sprite.frame = 0
 	if shoot_tween != null:
 		shoot_tween.kill()
 	$Arrow.visible = false
@@ -65,3 +71,49 @@ func _on_arrow_area_entered(_area: Area2D) -> void:
 	if shoot_tween != null:
 		shoot_tween.kill()
 	reset_arrow()
+
+
+
+func check_move(move_dir : Vector2) -> bool:
+	print(move_dir)
+	if move_dir.x > 0 and not can_move_right:
+		return false
+	if move_dir.x < 0 and not can_move_left:
+		return false
+	if move_dir.y < 0 and not can_move_top:
+		return false
+	if move_dir.y > 0 and not can_move_bottom:
+		return false
+	return true
+
+func _on_left_collider_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_left = false
+
+func _on_left_collider_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_left = true
+
+func _on_top_collider_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_top = false
+
+func _on_top_collider_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_top = true
+
+func _on_bottom_collider_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_bottom = false
+
+func _on_bottom_collider_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_bottom = true
+
+func _on_right_collider_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_right = false
+
+func _on_right_collider_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
+		can_move_right = true

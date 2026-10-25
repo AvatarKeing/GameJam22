@@ -4,16 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://bkolpr765fsy3" path="res://Sprites/CrossbowSheet.png" id="1_rseqn"]
 [ext_resource type="Texture2D" uid="uid://ub3xk0mpbxcd" path="res://Sprites/Arrow.png" id="3_rseqn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
-size = Vector2(46, 128)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxam5"]
 size = Vector2(128, 128)
 
-[node name="Sprite2D" type="Sprite2D" unique_id=1832230325]
-texture = ExtResource("1_rseqn")
-hframes = 3
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
+size = Vector2(46, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rseqn"]
+size = Vector2(128, 128)
+
+[node name="BodyBase" type="Area2D" unique_id=515577231 groups=["Possessables", "Pushables"]]
+collision_layer = 5
 script = ExtResource("1_1kmap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=989643473]
+shape = SubResource("RectangleShape2D_mxam5")
 
 [node name="Arrow" type="Area2D" parent="." unique_id=1216602162 groups=["Arrow"]]
 collision_layer = 2
@@ -27,9 +32,48 @@ position = Vector2(0.665, 0)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("3_rseqn")
 
-[node name="BodyBase" type="Area2D" parent="." unique_id=515577231 groups=["Possessables"]]
+[node name="TopCollider" type="Area2D" parent="." unique_id=201873611]
+position = Vector2(0, -128)
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBase" unique_id=989643473]
-shape = SubResource("RectangleShape2D_mxam5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=174727658]
+shape = SubResource("RectangleShape2D_rseqn")
 
-[connection signal="area_entered" from="Arrow" to="." method="_on_arrow_area_entered"]
+[node name="BottomCollider" type="Area2D" parent="." unique_id=443986930]
+position = Vector2(0, 128)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=881592674]
+shape = SubResource("RectangleShape2D_rseqn")
+
+[node name="LeftCollider" type="Area2D" parent="." unique_id=77573158]
+position = Vector2(-128, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider" unique_id=1741797958]
+shape = SubResource("RectangleShape2D_rseqn")
+
+[node name="RightCollider" type="Area2D" parent="." unique_id=1284672364]
+position = Vector2(128, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=13605679]
+shape = SubResource("RectangleShape2D_rseqn")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1832230325]
+texture = ExtResource("1_rseqn")
+hframes = 3
+
+[connection signal="area_entered" from="Arrow" to="Sprite" method="_on_arrow_area_entered"]
+[connection signal="area_entered" from="TopCollider" to="." method="_on_top_collider_area_entered"]
+[connection signal="area_exited" from="TopCollider" to="." method="_on_top_collider_area_exited"]
+[connection signal="area_entered" from="BottomCollider" to="." method="_on_bottom_collider_area_entered"]
+[connection signal="area_exited" from="BottomCollider" to="." method="_on_bottom_collider_area_exited"]
+[connection signal="area_entered" from="LeftCollider" to="." method="_on_left_collider_area_entered"]
+[connection signal="area_exited" from="LeftCollider" to="." method="_on_left_collider_area_exited"]
+[connection signal="area_entered" from="RightCollider" to="." method="_on_right_collider_area_entered"]
+[connection signal="area_exited" from="RightCollider" to="." method="_on_right_collider_area_exited"]
