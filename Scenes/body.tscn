@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
 size = Vector2(128, 128)
 
-[node name="Body" type="Area2D" unique_id=1216602162]
+[node name="Body" type="Area2D" unique_id=1216602162 groups=["Pushables"]]
 z_index = 1
+collision_layer = 7
 script = ExtResource("1_7h43o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975470393]

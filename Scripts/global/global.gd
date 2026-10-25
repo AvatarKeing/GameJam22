@@ -1,6 +1,10 @@
 extends Node
 
 func move_to(object: Node, move_amount: Vector2):
+	if object.has_method("check_move"):
+		if not object.check_move(move_amount):
+			return
+	
 	object.can_move = false
 	object.object_position += move_amount
 	var tween = create_tween()

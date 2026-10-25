@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccec8oxonst1a"]
+
+[ext_resource type="Texture2D" uid="uid://dwwhus7rhij10" path="res://Sprites/billows.webp" id="1_cma3m"]
+[ext_resource type="Script" uid="uid://c3huiea7yxdo3" path="res://Scripts/billows.gd" id="2_xedg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxam5"]
+size = Vector2(128, 128)
+
+[node name="Billows" type="Node2D" unique_id=600926263]
+script = ExtResource("2_xedg3")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1531912997]
+target_position = Vector2(0, -320)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832230325]
+scale = Vector2(4, 4)
+texture = ExtResource("1_cma3m")
+
+[node name="BodyBase" type="Area2D" parent="." unique_id=515577231 groups=["Possessables"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBase" unique_id=989643473]
+shape = SubResource("RectangleShape2D_mxam5")

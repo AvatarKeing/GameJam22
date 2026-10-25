@@ -19,6 +19,7 @@ var can_move_top = true
 var can_move_bottom = true
 
 func _ready() -> void:
+	object_position = position
 	currentState = moveState.DEAD
 
 func _input(event: InputEvent) -> void:
@@ -43,6 +44,18 @@ func _move_ghost(target_pos: Vector2):
 
 func _grid_to_pixel(x: int, y: int) -> Vector2:
 	return Vector2(offset * x, offset * y)
+
+func check_move(move_dir : Vector2) -> bool:
+	print(move_dir)
+	if move_dir.x > 0 and not can_move_right:
+		return false
+	if move_dir.x < 0 and not can_move_left:
+		return false
+	if move_dir.y < 0 and not can_move_top:
+		return false
+	if move_dir.y > 0 and not can_move_bottom:
+		return false
+	return true
 
 func _on_left_collider_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Border") || area.is_in_group("Wall") || area.is_in_group("Breakables"):
