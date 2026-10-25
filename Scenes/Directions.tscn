@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnii27uaa6wx" path="res://Sprites/keyboard_space.png" id="7_neemp"]
 [ext_resource type="Texture2D" uid="uid://3tmx1d0yhpmv" path="res://Sprites/keyboard_z.png" id="8_35irk"]
 [ext_resource type="Texture2D" uid="uid://0t008ecn3y0g" path="res://Sprites/keyboard_e.png" id="9_adayc"]
+[ext_resource type="Texture2D" uid="uid://0lniryagpd5" path="res://Sprites/keyboard_r.png" id="11_qg3r5"]
 
 [node name="Directions" type="Control" unique_id=1758248457]
 layout_mode = 3
@@ -29,78 +30,131 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1539257396]
-layout_mode = 0
-offset_right = 1918.0
-offset_bottom = 213.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1088984591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1539257396]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g02yo")
 theme_override_font_sizes/font_size = 200
 text = "Directions"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=154645422]
-layout_mode = 0
-offset_top = 384.0
-offset_right = 833.0
-offset_bottom = 623.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1687105191]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1682679836]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=154645422]
+layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Move"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="." unique_id=154835078]
-layout_mode = 0
-offset_left = 1192.0
-offset_top = 384.0
-offset_right = 1917.0
-offset_bottom = 623.0
+[node name="Control" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1811181803]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" unique_id=456899095]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=1531763842]
+layout_mode = 2
+
+[node name="KeyboardW" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=466761731]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_2yxge")
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=1331319767]
+layout_mode = 2
+
+[node name="KeyboardA" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=1550824916]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_qg3r5")
+
+[node name="KeyboardS" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=330998729]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_oayjs")
+
+[node name="KeyboardD" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control/Control" unique_id=189580891]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_e4vi2")
+
+[node name="KeyboardArrowsAll" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/Control" unique_id=133119144]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_position = Vector2(0, -92.655)
+texture = ExtResource("6_64qqp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1377326953]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/Control2" unique_id=154835078]
+layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KeyboardW" type="Sprite2D" parent="." unique_id=990553872]
-position = Vector2(228, 679)
-texture = ExtResource("2_2yxge")
-
-[node name="KeyboardA" type="Sprite2D" parent="." unique_id=940364912]
-position = Vector2(110, 800)
-texture = ExtResource("3_qg3r5")
-
-[node name="KeyboardS" type="Sprite2D" parent="." unique_id=1660400905]
-position = Vector2(230, 805)
-texture = ExtResource("4_oayjs")
-
-[node name="KeyboardD" type="Sprite2D" parent="." unique_id=1465849741]
-position = Vector2(354, 805)
-texture = ExtResource("5_e4vi2")
-
-[node name="KeyboardArrowsAll" type="Sprite2D" parent="." unique_id=905803390]
-position = Vector2(603, 749)
-scale = Vector2(3.5468752, 3.4218748)
-texture = ExtResource("6_64qqp")
-
-[node name="KeyboardSpace" type="Sprite2D" parent="." unique_id=1263834535]
-position = Vector2(1360, 775.5)
-scale = Vector2(2, 1.539062)
+[node name="KeyboardSpace" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control2" unique_id=1438350763]
+layout_mode = 2
 texture = ExtResource("7_neemp")
+stretch_mode = 3
 
-[node name="KeyboardZ" type="Sprite2D" parent="." unique_id=2032089995]
-position = Vector2(1550, 775)
+[node name="KeyboardZ" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control2" unique_id=1136496477]
+layout_mode = 2
 texture = ExtResource("8_35irk")
+stretch_mode = 3
 
-[node name="KeyboardE" type="Sprite2D" parent="." unique_id=1464813994]
-position = Vector2(1695, 773)
+[node name="KeyboardE" type="TextureRect" parent="VBoxContainer/HBoxContainer/Control2" unique_id=1198483872]
+layout_mode = 2
 texture = ExtResource("9_adayc")
+stretch_mode = 3
 
-[node name="Button" type="Button" parent="." unique_id=325810912]
-layout_mode = 0
-offset_top = 953.0
-offset_right = 1926.0
-offset_bottom = 1153.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1619066614]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1031634348]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardE" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1486444273]
+layout_mode = 2
+texture = ExtResource("11_qg3r5")
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=325810912]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g02yo")
 theme_override_font_sizes/font_size = 150
 text = "Back"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
