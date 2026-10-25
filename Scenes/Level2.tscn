@@ -124,7 +124,10 @@ size = Vector2(1896, 220)
 size = Vector2(200, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(96, 656)
+size = Vector2(184, 760)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au75x"]
+size = Vector2(216, 768)
 
 [node name="Level2" type="Node2D" unique_id=752347282]
 
@@ -198,11 +201,12 @@ collision_layer = 3
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=229434522 groups=["Wall"]]
+position = Vector2(44, 52)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Area2D" unique_id=324193506 groups=["Wall"]]
-position = Vector2(776, -128)
-shape = SubResource("RectangleShape2D_yf5fn")
+position = Vector2(716, -72)
+shape = SubResource("RectangleShape2D_au75x")
 
 [node name="WinScreen" parent="." unique_id=1757649345 instance=ExtResource("8_p4u3k")]
 visible = false

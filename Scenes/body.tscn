@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://nlywkm7o2xm0"]
 
 [ext_resource type="Script" uid="uid://x38sd27m4i4a" path="res://Scripts/body.gd" id="1_7h43o"]
-[ext_resource type="Texture2D" uid="uid://c1yqkgaquxe21" path="res://icon.svg" id="1_35550"]
+[ext_resource type="Texture2D" uid="uid://yf0ixkynjy17" path="res://Sprites/NormalGuySprites.png" id="2_vhqrm"]
+[ext_resource type="Texture2D" uid="uid://d2ergpegyweh4" path="res://Sprites/StatueGuySprites.png" id="3_ou3cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0t65"]
 size = Vector2(128, 128)
@@ -14,9 +15,14 @@ script = ExtResource("1_7h43o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975470393]
 shape = SubResource("RectangleShape2D_q0t65")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832230325]
-modulate = Color(0.9599789, 0.40782756, 0, 1)
-texture = ExtResource("1_35550")
+[node name="NormalSprite" type="Sprite2D" parent="." unique_id=1832230325]
+visible = false
+texture = ExtResource("2_vhqrm")
+hframes = 4
+
+[node name="StatueSprite" type="Sprite2D" parent="." unique_id=850617494]
+texture = ExtResource("3_ou3cv")
+hframes = 4
 
 [node name="TopCollider" type="Area2D" parent="." unique_id=1075411084]
 position = Vector2(0, -128)

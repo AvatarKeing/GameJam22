@@ -1,5 +1,9 @@
 extends Area2D
 
+@onready var NormalSpr: Sprite2D = $NormalSprite
+@onready var StatueSpr: Sprite2D = $StatueSprite
+
+
 # State Machine
 enum moveState {DEAD, FOCUS}
 var currentState
@@ -22,15 +26,32 @@ func _ready() -> void:
 	object_position = position
 	currentState = moveState.DEAD
 
+func _process(_delta: float) -> void:
+	match currentState:
+		moveState.FOCUS:
+			NormalSpr.visible = true
+			StatueSpr.visible = false
+		moveState.DEAD:
+			NormalSpr.visible = false
+			StatueSpr.visible = true
+
 func _input(event: InputEvent) -> void:
 	if currentState == moveState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
+			NormalSpr.frame = 1
+			StatueSpr.frame = 1
 			Global.move_to(self, Global._grid_to_pixel(offset, -1, 0))
 		if event.is_action_pressed("right") && can_move && can_move_right:
+			NormalSpr.frame = 3
+			StatueSpr.frame = 3
 			Global.move_to(self, Global._grid_to_pixel(offset, 1, 0))
 		if event.is_action_pressed("up") && can_move && can_move_top:
+			NormalSpr.frame = 2
+			StatueSpr.frame = 2
 			Global.move_to(self, Global._grid_to_pixel(offset, 0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
+			NormalSpr.frame = 0
+			StatueSpr.frame = 0
 			Global.move_to(self, Global._grid_to_pixel(offset, 0, 1))
 
 func _move_ghost(target_pos: Vector2):
