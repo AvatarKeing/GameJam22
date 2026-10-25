@@ -53,7 +53,8 @@ func _shoot() -> void:
 	%Sprite.frame = 2
 	if shoot_tween != null:
 		shoot_tween.kill()
-		
+	else:
+	Audio.get_script().play_sfx(Global.sfx_type.CROSSBOW)
 	%Arrow.visible = true
 	%Arrow.process_mode = Node.PROCESS_MODE_INHERIT
 	shoot_tween = create_tween()

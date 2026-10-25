@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcvjuyom5fhsc"
+path="res://.godot/imported/Rock Moving.mp3-8822c4e777a24ae29d9d236b30b4646a.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Rock Moving.mp3"
+dest_files=["res://.godot/imported/Rock Moving.mp3-8822c4e777a24ae29d9d236b30b4646a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

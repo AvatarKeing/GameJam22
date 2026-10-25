@@ -26,6 +26,7 @@ var object_to_possess : Node = null
 func _ready() -> void:
 	object_position = position
 	currentState = ghostState.FOCUS
+	Audio.get_script()._maingameghost()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -98,6 +99,8 @@ func _on_ghost_base_area_exited(area: Area2D) -> void:
 		can_possess = false
 
 func possess_host():
+	Audio.get_script().play_sfx(Global.sfx_type.POSSESSION)
+	Audio.get_script()._maingamestatue()
 	currentState = ghostState.POSSESS
 	visible = false
 	object_to_possess.currentState = object_to_possess.moveState.FOCUS
@@ -105,6 +108,7 @@ func possess_host():
 		object_to_possess.possess()
 
 func leave_host():
+	Audio.get_script()._maingameghost()
 	if object_to_possess.has_method("unposses"):
 		object_to_possess.unposses()
 	

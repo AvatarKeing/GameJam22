@@ -1,5 +1,7 @@
 extends Node
 
+enum sfx_type {BELLOWS, CROSSBOW, MENU_BUTTON, POSSESSION, ROCK_MOVING, SWORD, BREAK}
+
 func move_to(object: Node, move_amount: Vector2):
 	if object.has_method("check_move"):
 		if not object.check_move(move_amount):

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bfosky7a3a883"]
+
+[ext_resource type="Script" uid="uid://c5te7x46o2jvm" path="res://Scripts/audio.gd" id="1_l04ps"]
+[ext_resource type="AudioStream" uid="uid://jdmpp1aeh2oy" path="res://Audio/Music/BGS_Final-001.ogg" id="2_y8l05"]
+[ext_resource type="AudioStream" uid="uid://ce0rt20w7ssnv" path="res://Audio/Music/BGS_Final-002.ogg" id="3_fqpxi"]
+[ext_resource type="AudioStream" uid="uid://d12jvaxjyfw1v" path="res://Audio/Music/BGS_Final-003.ogg" id="4_kvgb3"]
+[ext_resource type="AudioStream" uid="uid://cjw5khk6asdf3" path="res://Audio/Music/BGS_Final-004.ogg" id="5_xsfld"]
+
+[node name="Audio" type="Node2D" unique_id=261841950]
+script = ExtResource("1_l04ps")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1543461471]
+
+[node name="001" type="AudioStreamPlayer2D" parent="." unique_id=67150800]
+stream = ExtResource("2_y8l05")
+
+[node name="002" type="AudioStreamPlayer2D" parent="." unique_id=1888797733]
+stream = ExtResource("3_fqpxi")
+
+[node name="003" type="AudioStreamPlayer2D" parent="." unique_id=1176071409]
+stream = ExtResource("4_kvgb3")
+
+[node name="004" type="AudioStreamPlayer2D" parent="." unique_id=901830107]
+stream = ExtResource("5_xsfld")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="." unique_id=1401978930]
