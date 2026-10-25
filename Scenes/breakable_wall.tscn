@@ -52,7 +52,7 @@ script = ExtResource("1_3w8jx")
 [node name="TileMap" type="TileMap" parent="." unique_id=596418085]
 tile_set = SubResource("TileSet_g4v7s")
 format = 2
-layer_0/tile_data = PackedInt32Array(131074, 65537, 2, 131072, 327681, 2, 131073, 327681, 3, 65538, 262145, 1, 65537, 262145, 1, 65536, 262145, 1, 2, 196609, 0, 1, 65537, 4, 0, 327681, 0)
+layer_0/tile_data = PackedInt32Array(131074, 65537, 2, 131072, 65537, 2, 131073, 327681, 3, 65538, 262145, 1, 65537, 262145, 1, 65536, 262145, 1, 2, 196609, 0, 1, 65537, 4, 0, 327681, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=897391324 groups=["Wall"]]
 position = Vector2(72, 192)

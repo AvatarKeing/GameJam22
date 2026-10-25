@@ -5,6 +5,8 @@ enum moveState {DEAD, FOCUS}
 var currentState
 var possessor
 
+var can_rotate = true
+
 # Grid Variables
 @export_category("Grid Variables")
 @export var object_position: Vector2 = Vector2(832, 320)
@@ -12,16 +14,26 @@ var possessor
 const rotate_speed : float = 1.0
 
 func _ready() -> void:
+	object_position = position
 	currentState = moveState.DEAD
 	reset_arrow()
 	
-func _process(delta: float) -> void:
+func _input(event: InputEvent) -> void:
 	if currentState == moveState.FOCUS:
-		frame = 1
-		if Input.is_action_pressed("left"):
-			rotate(-rotate_speed * delta)
-		if Input.is_action_pressed("right"):
-			rotate(rotate_speed * delta)
+		if can_rotate:
+			frame = 1
+			if event.is_action_pressed("left"):
+				can_rotate = false
+				var rotTween = create_tween()
+				rotTween.tween_property(self, "rotation", rotation + -PI / 2, 0.125).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+				await get_tree().create_timer(0.125).timeout
+				can_rotate = true
+			if event.is_action_pressed("right"):
+				can_rotate = false
+				var rotTween = create_tween()
+				rotTween.tween_property(self, "rotation", rotation + PI / 2, 0.125).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+				await get_tree().create_timer(0.125).timeout
+				can_rotate = true
 
 func unposses() -> void:
 	_shoot()

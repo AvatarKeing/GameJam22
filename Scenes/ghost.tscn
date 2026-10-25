@@ -9,6 +9,18 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3r4w"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_108wt"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3btnm"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taxxh"]
+size = Vector2(70, 74)
+
 [node name="Ghost" type="Area2D" unique_id=764349992]
 position = Vector2(320, 320)
 script = ExtResource("1_e3r4w")
@@ -31,25 +43,25 @@ shape = SubResource("RectangleShape2D_g4v7s")
 position = Vector2(0, -128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollider" unique_id=1169889335]
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_e3r4w")
 
 [node name="BottomCollider" type="Area2D" parent="." unique_id=761991328]
 position = Vector2(0, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollider" unique_id=722378245]
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_108wt")
 
 [node name="RightCollider" type="Area2D" parent="." unique_id=1340688133]
 position = Vector2(128, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider" unique_id=198420370]
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_3btnm")
 
 [node name="GhostBase" type="Area2D" parent="." unique_id=997395490]
 z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostBase" unique_id=873016026]
-shape = SubResource("RectangleShape2D_vpdtx")
+shape = SubResource("RectangleShape2D_taxxh")
 
 [connection signal="area_entered" from="LeftCollider" to="." method="_on_left_collider_area_entered"]
 [connection signal="area_exited" from="LeftCollider" to="." method="_on_left_collider_area_exited"]

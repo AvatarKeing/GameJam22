@@ -24,6 +24,7 @@ var can_possess = false
 var object_to_possess : Node = null
 
 func _ready() -> void:
+	object_position = position
 	currentState = ghostState.FOCUS
 
 func _input(event: InputEvent) -> void:
