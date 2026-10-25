@@ -41,12 +41,12 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_3w8jx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(129, 386)
+size = Vector2(88.5, 358.33337)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(130, 386)
 
-[node name="BreakableWall" type="Area2D" unique_id=1838722457]
+[node name="BreakableWall" type="Area2D" unique_id=1838722457 groups=["Wall"]]
 script = ExtResource("1_3w8jx")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=596418085]
@@ -55,7 +55,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131074, 65537, 2, 131072, 65537, 2, 131073, 327681, 3, 65538, 262145, 1, 65537, 262145, 1, 65536, 262145, 1, 2, 196609, 0, 1, 65537, 4, 0, 327681, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=897391324 groups=["Wall"]]
-position = Vector2(72, 192)
+position = Vector2(64, 187.99998)
 scale = Vector2(1, 0.96)
 shape = SubResource("RectangleShape2D_g4v7s")
 
@@ -64,7 +64,7 @@ position = Vector2(312, 192)
 scale = Vector2(1, 0.96)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="BreakableSection" type="Area2D" parent="." unique_id=1990037227 groups=["Breakables"]]
+[node name="BreakableSection" type="Area2D" parent="." unique_id=1990037227 groups=["Breakables", "Wall"]]
 collision_layer = 2
 collision_mask = 2
 
