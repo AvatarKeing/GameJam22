@@ -107,6 +107,18 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_0plju")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(240, 1416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehjmi"]
+size = Vector2(240, 1416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4u3k"]
+size = Vector2(2168, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70df5"]
+size = Vector2(1896, 220)
+
 [node name="Level2" type="Node2D" unique_id=752347282]
 
 [node name="Tiles" type="TileMap" parent="." unique_id=803667007]
@@ -131,7 +143,6 @@ position = Vector2(1536, 0)
 
 [node name="Body" parent="." unique_id=1216602162 instance=ExtResource("6_jriq2")]
 position = Vector2(960, 320)
-collision_layer = 1
 
 [node name="Sprite2D2" parent="." unique_id=942047797 instance=ExtResource("3_ms0wi")]
 position = Vector2(320, 320)
@@ -143,3 +154,25 @@ dir = Vector2(1, 0)
 [node name="Billows2" parent="." unique_id=1871249076 instance=ExtResource("7_ehjmi")]
 position = Vector2(320, 192)
 dir = Vector2(0, 1)
+
+[node name="Borders" type="Node" parent="." unique_id=1033989495]
+
+[node name="LeftRight" type="Area2D" parent="Borders" unique_id=361182178 groups=["Border"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftRight" unique_id=1375284212]
+position = Vector2(0, 564)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/LeftRight" unique_id=172765688]
+position = Vector2(1920, 568)
+shape = SubResource("RectangleShape2D_ehjmi")
+
+[node name="UpDown" type="Area2D" parent="Borders" unique_id=1798864573 groups=["Border"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/UpDown" unique_id=801739815]
+position = Vector2(964, -28)
+shape = SubResource("RectangleShape2D_p4u3k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/UpDown" unique_id=1429725405]
+position = Vector2(1092, 1166)
+shape = SubResource("RectangleShape2D_70df5")

@@ -16,6 +16,7 @@ const rotate_speed : float = 1.0
 
 func _ready() -> void:
 	$RayCast2D.enabled = false
+	$RayCast2D.target_position = dir * 2000
 	currentState = moveState.DEAD
 	
 func _process(_delta: float) -> void:
