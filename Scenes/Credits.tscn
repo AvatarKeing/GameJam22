@@ -36,14 +36,13 @@ layout_mode = 0
 offset_top = 257.0
 offset_right = 1922.0
 offset_bottom = 996.0
+theme_override_constants/line_spacing = -20
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 100
-text = "-Julian Heuser
--Keing Taylor
--Terra Torres
--Charlotte Murphy
--Travis Strade
--Luan Dunlap"
+text = "-Julian Heuser -Charlotte Murphy
+-Keing Taylor -Travis Strade
+-Luan Dunlap -Terra Torres
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

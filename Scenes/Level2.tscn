@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dcofqqkdlf6vi" path="res://Scenes/door.tscn" id="5_n3cqh"]
 [ext_resource type="PackedScene" uid="uid://nlywkm7o2xm0" path="res://Scenes/body.tscn" id="6_jriq2"]
 [ext_resource type="PackedScene" uid="uid://ccec8oxonst1a" path="res://Scenes/billows.tscn" id="7_ehjmi"]
+[ext_resource type="PackedScene" uid="uid://benqw17xyw1nv" path="res://Scenes/win_screen.tscn" id="8_p4u3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0plju"]
 texture = ExtResource("1_llwst")
@@ -141,8 +142,9 @@ position = Vector2(128, 384)
 [node name="Ghost" parent="." unique_id=764349992 instance=ExtResource("4_5awjf")]
 position = Vector2(832, 1088)
 
-[node name="Door" parent="." unique_id=880633389 instance=ExtResource("5_n3cqh")]
+[node name="Door" parent="." unique_id=880633389 node_paths=PackedStringArray("win_screen") instance=ExtResource("5_n3cqh")]
 position = Vector2(1536, 0)
+win_screen = NodePath("../WinScreen")
 
 [node name="Body" parent="." unique_id=1216602162 instance=ExtResource("6_jriq2")]
 position = Vector2(960, 320)
@@ -201,3 +203,7 @@ shape = SubResource("RectangleShape2D_yf5fn")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Area2D" unique_id=324193506 groups=["Wall"]]
 position = Vector2(776, -128)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="WinScreen" parent="." unique_id=1757649345 instance=ExtResource("8_p4u3k")]
+visible = false
+current_scene = 2

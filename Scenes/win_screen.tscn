@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://benqw17xyw1nv"]
+
+[ext_resource type="Script" uid="uid://bijtgbepyg4ou" path="res://Scripts/win_screen.gd" id="1_awi1s"]
+[ext_resource type="FontFile" uid="uid://da1ynrnyxdsm" path="res://Font/PixelWarden.ttf" id="2_bwc64"]
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="3_85imr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3or0"]
+bg_color = Color(0, 0, 0, 0.6156863)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="WinScreen" type="Control" unique_id=1757649345]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2048.0
+offset_bottom = 1152.0
+script = ExtResource("1_awi1s")
+current_scene = 1
+
+[node name="WinPanel" type="Panel" parent="." unique_id=1194354074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -448.0
+offset_right = 752.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t3or0")
+
+[node name="MarginContainer" type="MarginContainer" parent="WinPanel" unique_id=1768177744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinPanel/MarginContainer" unique_id=710370775]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="WinPanel/MarginContainer/VBoxContainer" unique_id=869895058]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bwc64")
+theme_override_font_sizes/font_size = 72
+text = "Level Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="WinPanel/MarginContainer/VBoxContainer" unique_id=1814628755]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="WinPanel/MarginContainer/VBoxContainer" unique_id=1249361803]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_85imr")
+theme_override_font_sizes/font_size = 60
+text = "Continue"
+
+[node name="Control2" type="Control" parent="WinPanel/MarginContainer/VBoxContainer" unique_id=1145102221]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="WinPanel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bvqngx41mt3uf" path="res://Scripts/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://cay8520xbvc0o" path="res://Sprites/Game_26_background.webp" id="2_cayip"]
 [ext_resource type="FontFile" uid="uid://da1ynrnyxdsm" path="res://Font/PixelWarden.ttf" id="2_xhh6f"]
+[ext_resource type="FontFile" uid="uid://dijvmeiadm2uv" path="res://Font/Spooky Ghoster.otf" id="4_158mb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhmj0"]
 bg_color = Color(0.416999, 0.607826, 0.871154, 1)
@@ -41,10 +42,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -640.0
-offset_top = 48.0
-offset_right = 640.0
-offset_bottom = 279.0
+offset_left = -904.0
+offset_top = 56.0
+offset_right = 455.0
+offset_bottom = 287.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.09019608, 0.5647059, 0.34901962, 1)
 theme_override_colors/font_shadow_color = Color(1.0781288e-05, 0.9043947, 0.5707307, 1)
@@ -61,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -279.0
-offset_top = -110.0
-offset_right = 279.0
-offset_bottom = 110.0
+offset_left = -856.0
+offset_top = -200.0
+offset_right = -298.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,19 +75,22 @@ theme_override_constants/separation = 14
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1179658159]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_158mb")
+theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_yhmj0")
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=981612546]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_158mb")
+theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_c23a0")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658365688]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("4_158mb")
+theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_2wkxx")
 text = "Quit"
 

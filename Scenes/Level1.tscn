@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bi0bm6bhqas3u" path="res://Scenes/crossbow.tscn" id="3_joc8x"]
 [ext_resource type="PackedScene" uid="uid://cnkg888myqv2u" path="res://Scenes/breakable_wall.tscn" id="5_slnnj"]
 [ext_resource type="PackedScene" uid="uid://dcofqqkdlf6vi" path="res://Scenes/door.tscn" id="6_t3or0"]
+[ext_resource type="PackedScene" uid="uid://benqw17xyw1nv" path="res://Scenes/win_screen.tscn" id="7_ysn8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3or0"]
 texture = ExtResource("1_joc8x")
@@ -208,5 +209,9 @@ object_position = Vector2(320, 960)
 
 [node name="Door" type="Node" parent="." unique_id=1810078878]
 
-[node name="Door2" parent="." unique_id=880633389 instance=ExtResource("6_t3or0")]
+[node name="Door2" parent="." unique_id=880633389 node_paths=PackedStringArray("win_screen") instance=ExtResource("6_t3or0")]
 position = Vector2(1152, 0)
+win_screen = NodePath("../WinScreen")
+
+[node name="WinScreen" parent="." unique_id=1757649345 instance=ExtResource("7_ysn8j")]
+visible = false

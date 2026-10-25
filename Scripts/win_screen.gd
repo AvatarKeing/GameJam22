@@ -1,0 +1,10 @@
+extends Control
+
+@export var current_scene: int
+
+func _on_button_pressed() -> void:
+	match current_scene:
+		1:
+			get_tree().change_scene_to_file("res://Scenes/Level2.tscn")
+		2:
+			get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
