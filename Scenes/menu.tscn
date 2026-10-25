@@ -85,7 +85,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_158mb")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/hover = SubResource("StyleBoxFlat_c23a0")
-text = "Options"
+text = "Controls"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658365688]
 layout_mode = 2
