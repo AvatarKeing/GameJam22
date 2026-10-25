@@ -36,6 +36,8 @@ func _input(event: InputEvent) -> void:
 					possess_host()
 			ghostState.POSSESS:
 				leave_host()
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 	if currentState == ghostState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
 			spr.frame = 1

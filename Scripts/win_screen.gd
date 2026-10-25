@@ -7,4 +7,6 @@ func _on_button_pressed() -> void:
 		1:
 			get_tree().change_scene_to_file("res://Scenes/Level2.tscn")
 		2:
+			get_tree().change_scene_to_file("res://Scenes/Level3.tscn")
+		3:
 			get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
