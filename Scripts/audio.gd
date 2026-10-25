@@ -23,7 +23,7 @@ func _force_music() -> void:
 	# fix to for loop
 	for n in 4:
 		if (is_playing[n]):
-			actual_nodes[n].volume_db = 0
+			actual_nodes[n].volume_db = 1
 		else:
 			actual_nodes[n].volume_db = -100
 
