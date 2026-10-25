@@ -9,7 +9,7 @@ var currentState
 # Grid Variables
 @export_category("Grid Variables")
 @export var offset = 128
-@export var ghost_position: Vector2 = Vector2(320, 320)
+@export var object_position: Vector2 = Vector2(320, 320)
 
 # movement variables
 @export_category("Movement Variables")
@@ -37,24 +37,16 @@ func _input(event: InputEvent) -> void:
 	if currentState == ghostState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
 			spr.frame = 1
-			_move_ghost(_grid_to_pixel(-1, 0))
+			Global.move_to(self, Global._grid_to_pixel(offset, -1, 0))
 		if event.is_action_pressed("right") && can_move && can_move_right:
 			spr.frame = 3
-			_move_ghost(_grid_to_pixel(1, 0))
+			Global.move_to(self, Global._grid_to_pixel(offset, 1, 0))
 		if event.is_action_pressed("up") && can_move && can_move_top:
 			spr.frame = 2
-			_move_ghost(_grid_to_pixel(0, -1))
+			Global.move_to(self, Global._grid_to_pixel(offset, 0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
 			spr.frame = 0
-			_move_ghost(_grid_to_pixel(0, 1))
-
-func _move_ghost(target_pos: Vector2):
-	can_move = false
-	ghost_position += target_pos
-	var tween = create_tween()
-	
-	tween.tween_property(self, "position", ghost_position, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
-	can_move = true
+			Global.move_to(self, Global._grid_to_pixel(offset, 0, 1))
 
 func _grid_to_pixel(x: int, y: int) -> Vector2:
 	return Vector2(offset * x, offset * y)
@@ -111,6 +103,6 @@ func leave_host():
 	
 	currentState = ghostState.FOCUS
 	position = object_to_possess.position
-	ghost_position = object_to_possess.object_position
+	object_position = object_to_possess.object_position
 	visible = true
 	object_to_possess.currentState = object_to_possess.moveState.DEAD

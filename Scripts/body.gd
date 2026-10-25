@@ -24,13 +24,13 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if currentState == moveState.FOCUS:
 		if event.is_action_pressed("left") && can_move && can_move_left:
-			_move_ghost(_grid_to_pixel(-1, 0))
+			Global.move_to(self, Global._grid_to_pixel(offset, -1, 0))
 		if event.is_action_pressed("right") && can_move && can_move_right:
-			_move_ghost(_grid_to_pixel(1, 0))
+			Global.move_to(self, Global._grid_to_pixel(offset, 1, 0))
 		if event.is_action_pressed("up") && can_move && can_move_top:
-			_move_ghost(_grid_to_pixel(0, -1))
+			Global.move_to(self, Global._grid_to_pixel(offset, 0, -1))
 		if event.is_action_pressed("down") && can_move && can_move_bottom:
-			_move_ghost(_grid_to_pixel(0, 1))
+			Global.move_to(self, Global._grid_to_pixel(offset, 0, 1))
 
 func _move_ghost(target_pos: Vector2):
 	can_move = false

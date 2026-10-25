@@ -134,7 +134,7 @@ position = Vector2(128, 384)
 [node name="Ghost" parent="." unique_id=764349992 instance=ExtResource("1_2llne")]
 z_index = 2
 position = Vector2(1088, 1088)
-ghost_position = Vector2(1088, 1088)
+object_position = Vector2(1088, 1088)
 
 [node name="Body" parent="." unique_id=1216602162 instance=ExtResource("2_q12u6")]
 position = Vector2(320, 192)
